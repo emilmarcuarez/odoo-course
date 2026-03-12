@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_create,perm_read,perm_write,perm_unlink
+access_aprobaciones,access.aprobaciones,model_aprobaciones_custom,aprobaciones.administrador_aprobaciones,1,1,1,0
+access_aprobaciones_lines,access.aprobaciones.lines,model_aprobaciones_lines,aprobaciones.administrador_aprobaciones,1,1,1,1
+access_category,access.category,model_aprobaciones_category,aprobaciones.administrador_aprobaciones,1,1,1,0

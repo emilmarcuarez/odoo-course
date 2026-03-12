@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="aprobaciones_category_parent" model="ir.module.category">
+        <field name="name">APROBACIONES</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="aprobaciones_subcategory" model="ir.module.category">
+        <field name="name">aprobaciones</field>
+        <field name="sequence">1</field>
+        <field name="parent_id" ref="aprobaciones_category_parent"/>
+    </record>
+    <record id="privilegio_aprobaciones" model="res.groups.privilege">
+        <field name="name">Nivel de acceso a aprobaciones </field>
+        <field name="category_id" ref="aprobaciones_subcategory"/>
+    </record>
+
+    <record id="administrador_aprobaciones" model="res.groups">
+        <field name="name">Administrador de aprobaciones</field>
+        <field name="privilege_id" ref="privilegio_aprobaciones"/>
+    </record>
+</odoo>

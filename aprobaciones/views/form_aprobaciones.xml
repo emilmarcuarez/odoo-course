@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="aprobaciones_form_view" model="ir.ui.view">
+        <field name="name">aprobaciones.form.view</field>
+        <field name="model">aprobaciones.custom</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                         <group>
+                            <field name="name"/>
+                            <field name="fecha_creacion"/>
+                        </group>
+                        <group>
+                            <field name="aprobador_id"/>
+                            <field name="category_ids" widget="many2many_tags" options="{'no_create':True}"/>
+                            <field name="qty_lines"/>
+                            <field name="qty_urgente"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Detalles aprobaciones">
+                            <field name="aprobaciones_lines_ids">
+                                <list editable="bottom">
+                                    <field name="motivo"/>
+                                    <field name="is_urgente"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

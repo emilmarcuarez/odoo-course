@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_list_aprobaciones" model="ir.ui.view">
+        <field name="name">view.list.aprobaciones</field>
+        <field name="model">aprobaciones.custom</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="fecha_creacion"/>
+                <field name="state"/>
+                <field name="aprobador_id"/>
+            </list>
+        </field>
+    </record>
+    <record id="aprobaciones_action" model="ir.actions.act_window">
+        <field name="name">aprobaciones.action</field>
+        <field name="res_model">aprobaciones.custom</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_aprobaciones_custom" name="Aprobaciones" action="aprobaciones_action"/>
+    <menuitem id="category_aprobaciones" name="Categorias" parent="menu_aprobaciones_custom" action="category_action_aprobaciones"/>
+</odoo>
