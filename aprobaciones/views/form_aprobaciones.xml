@@ -6,18 +6,18 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget="statusbar"/>
+                    <field name="state" widget="statusbar" options="{'clickable':1}"/>
                 </header>
                 <sheet>
                     <group>
                          <group>
-                            <field name="name"/>
-                            <field name="fecha_creacion"/>
+                            <field name="name" required="1"/>
+                            <field name="fecha_creacion" required="1"/>
                         </group>
                         <group>
-                            <field name="aprobador_id"/>
+                            <field name="aprobador_id" required="1" readonly="state != 'draft' "/>
                             <field name="category_ids" widget="many2many_tags" options="{'no_create':True}"/>
-                            <field name="qty_lines"/>
+                            <field name="qty_lines" invisible="state in ['send']"/>
                             <field name="qty_urgente"/>
                         </group>
                     </group>
